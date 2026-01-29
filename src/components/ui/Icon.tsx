@@ -1,15 +1,15 @@
-import { LucideProps, Phone, Mail, MapPin, Clock, Shield, Award, Users, Wrench, Star, Menu, X, ChevronRight, Package, CheckCircle, MessageSquare, Settings, ShieldCheck } from "lucide-react";
+import { LucideProps, Phone, Mail, MapPin, Clock, Shield, Award, Users, Wrench, Star, Menu, X, ChevronRight, Package, CheckCircle, MessageSquare, Settings, ShieldCheck, HelpCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type IconName =
     | "Phone" | "Mail" | "MapPin" | "Clock" | "Shield" | "Award" | "Users"
     | "Wrench" | "Star" | "Menu" | "X" | "ChevronRight" | "Package" | "CheckCircle"
-    | "MessageSquare" | "Settings" | "ShieldCheck";
+    | "MessageSquare" | "Settings" | "ShieldCheck" | "HelpCircle" | "ArrowRight" | "ArrowLeft";
 
 const iconMap: Record<IconName, React.ComponentType<LucideProps>> = {
     Phone, Mail, MapPin, Clock, Shield, Award, Users,
     Wrench, Star, Menu, X, ChevronRight, Package, CheckCircle,
-    MessageSquare, Settings, ShieldCheck
+    MessageSquare, Settings, ShieldCheck, HelpCircle, ArrowRight, ArrowLeft
 };
 
 interface IconProps extends LucideProps {

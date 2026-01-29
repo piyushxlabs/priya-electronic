@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { productCategories } from "@/data/productCategories";
 import { Icon } from "@/components/ui/Icon";
+import { Button } from "@/components/ui/Button";
 
 export function CategoryGrid() {
     return (
@@ -17,7 +18,7 @@ export function CategoryGrid() {
                             <div className="aspect-[4/3] relative bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 overflow-hidden">
                                 <Image
                                     src={category.image}
-                                    alt={category.name}
+                                    alt={`${category.name} in Raiwala - Top Brands & Models`}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
@@ -43,6 +44,12 @@ export function CategoryGrid() {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="mt-12 text-center">
+                    <p className="text-text-muted mb-4">Have questions about our products?</p>
+                    <Link href="/faq">
+                        <Button variant="outline">Visit FAQ Page</Button>
+                    </Link>
                 </div>
             </div>
         </section>

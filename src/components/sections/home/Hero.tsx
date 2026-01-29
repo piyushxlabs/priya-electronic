@@ -47,13 +47,15 @@ export function Hero() {
                 <div className="relative z-10 h-full flex items-center justify-center">
                     <div className="container mx-auto px-4 md:px-6 text-center">
                         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-                            Trusted Home Appliances for
+                            The Best Home Appliances in
                             <br className="hidden md:block" />
-                            <span className="text-accent"> Raiwala Families</span>
+                            <span className="text-accent"> Raiwala, Dehradun</span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 drop-shadow-md">
-                            Refrigerators, ACs, TVs, Washing Machines — Quality Products, Local Service
+                            Quality Refrigerators, ACs, TVs, and Washing Machines.
+                            <br className="hidden sm:block" />
+                            Serving Raiwala Families Since 2010.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

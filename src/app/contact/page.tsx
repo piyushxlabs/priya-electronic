@@ -5,8 +5,11 @@ import { MapEmbed } from "@/components/sections/contact/MapEmbed";
 import { InquiryForm } from "@/components/sections/contact/InquiryForm";
 
 export const metadata: Metadata = {
-    title: "Contact | Priya Electronic - Home Appliances in Raiwala, Dehradun",
-    description: "Get in touch with Priya Electronic. Visit our store, call us, or send a message on WhatsApp.",
+    title: "Contact Us - Priya Electronic Raiwala | Visit Our Store or Call",
+    description: "Visit Priya Electronic in Raiwala, Dehradun. Phone: +91-6395536126, Address: Main Market, Raiwala. Open Mon-Sat 10 AM - 8 PM. Get directions and store hours.",
+    alternates: {
+        canonical: "https://priyaelectronic.com/contact",
+    },
 };
 
 export default function ContactPage() {

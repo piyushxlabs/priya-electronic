@@ -6,9 +6,11 @@ import { contactInfo } from "@/data/contact";
 const footerLinks = {
     navigation: [
         { href: "/", label: "Home" },
-        { href: "/products", label: "Products" },
-        { href: "/about", label: "About Us" },
-        { href: "/contact", label: "Contact" },
+        { href: "/products", label: "Our Appliances" },
+        { href: "/blog", label: "Expert Blog Guides" },
+        { href: "/about", label: "Our Story" },
+        { href: "/faq", label: "FAQs" },
+        { href: "/contact", label: "Contact Us" },
     ],
 };
 
@@ -21,7 +23,8 @@ export function Footer() {
                     <div className="space-y-4">
                         <h3 className="text-lg font-bold text-white">Priya Electronic</h3>
                         <p className="text-sm text-gray-300">
-                            Your trusted local electronics shop in Raiwala. Quality home appliances with expert service.
+                            Your trusted destination for home appliances and electronics in Raiwala since 2010.
+                            Check our <Link href="/blog" className="text-accent hover:underline">Blog</Link> for expert guides.
                         </p>
                     </div>
 

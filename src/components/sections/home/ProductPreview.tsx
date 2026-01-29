@@ -27,7 +27,7 @@ export function ProductPreview() {
                             <div className="aspect-square relative bg-gradient-to-br from-accent/10 to-accent/5 overflow-hidden">
                                 <Image
                                     src={category.image}
-                                    alt={category.name}
+                                    alt={`${category.name} for Sale in Raiwala, Dehradun`}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
