@@ -31,13 +31,14 @@ export function ScrollFrameAnimation({
 }: ScrollFrameAnimationProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [images, setImages] = useState<HTMLImageElement[]>([]);
+    const imagesRef = useRef<HTMLImageElement[]>([]);
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const [loadedCount, setLoadedCount] = useState(0);
     const shouldReduceMotion = useReducedMotion();
 
     // Keep track of the current frame to draw in a ref to avoid re-render cycles during scroll
     const currentFrameRef = useRef(0);
+    const isDrawingRef = useRef(false);
 
     // Generate frame URL for a given index
     const getFrameUrl = useCallback((index: number) => {
@@ -53,50 +54,58 @@ export function ScrollFrameAnimation({
     });
 
     // Function to draw a specific frame to the canvas
-    const drawFrame = useCallback((frameIndex: number, imgs: HTMLImageElement[]) => {
+    const drawFrame = useCallback((frameIndex: number) => {
         const canvas = canvasRef.current;
-        if (!canvas || imgs.length === 0) return;
+        if (!canvas) return;
 
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        const img = imgs[frameIndex];
-        if (!img || !img.complete) return;
-
-        // Clear and draw
-        const { width, height } = canvas;
-        const imgRatio = img.width / img.height;
-        const canvasRatio = width / height;
-
-        let drawWidth, drawHeight, offsetX, offsetY;
-
-        if (imgRatio > canvasRatio) {
-            drawHeight = height;
-            drawWidth = img.width * (height / img.height);
-            offsetX = (width - drawWidth) / 2;
-            offsetY = 0;
-        } else {
-            drawWidth = width;
-            drawHeight = img.height * (width / img.width);
-            offsetX = 0;
-            offsetY = (height - drawHeight) / 2;
+        const img = imagesRef.current[frameIndex];
+        if (!img || !img.complete) {
+            // If the specific frame isn't loaded, try drawing the nearest loaded frame
+            // or just skip to avoid blank/flicker
+            return;
         }
 
-        ctx.clearRect(0, 0, width, height);
-        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+        if (isDrawingRef.current) return;
+        isDrawingRef.current = true;
+
+        requestAnimationFrame(() => {
+            const { width, height } = canvas;
+            const imgRatio = img.width / img.height;
+            const canvasRatio = width / height;
+
+            let drawWidth, drawHeight, offsetX, offsetY;
+
+            if (imgRatio > canvasRatio) {
+                drawHeight = height;
+                drawWidth = img.width * (height / img.height);
+                offsetX = (width - drawWidth) / 2;
+                offsetY = 0;
+            } else {
+                drawWidth = width;
+                drawHeight = img.height * (width / img.width);
+                offsetX = 0;
+                offsetY = (height - drawHeight) / 2;
+            }
+
+            // Fill with white to avoid dark background showing through clearRect
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, width, height);
+            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            isDrawingRef.current = false;
+        });
     }, []);
 
     // Update frame based on scroll
     useMotionValueEvent(scrollYProgress, "change", (value) => {
-        if (!imagesLoaded) return;
-
         const newFrame = Math.min(Math.floor(value * frameCount), frameCount - 1);
         const clampedFrame = Math.max(0, newFrame);
 
         if (clampedFrame !== currentFrameRef.current) {
             currentFrameRef.current = clampedFrame;
-            console.log(`Scroll progress: ${value.toFixed(2)}, Drawing frame: ${clampedFrame}`);
-            drawFrame(clampedFrame, images);
+            drawFrame(clampedFrame);
         }
     });
 
@@ -104,41 +113,36 @@ export function ScrollFrameAnimation({
     useEffect(() => {
         let loaded = 0;
         const total = frameCount;
-        const loadedImages: HTMLImageElement[] = [];
 
-        console.log('Starting to load frames...');
         for (let i = 0; i < total; i++) {
             const img = new Image();
-            const url = getFrameUrl(i);
-            console.log(`Loading frame ${i}: ${url}`);
-            img.src = url;
+            img.src = getFrameUrl(i);
             img.onload = () => {
                 loaded++;
                 setLoadedCount(loaded);
-                console.log(`Frame ${i} loaded successfully`);
+                imagesRef.current[i] = img;
+
+                // Draw the first frame immediately if it's the one that just loaded
+                if (i === 0 && currentFrameRef.current === 0) {
+                    drawFrame(0);
+                }
+
                 if (loaded >= total) {
-                    setImages(loadedImages);
                     setImagesLoaded(true);
-                    console.log('All frames loaded!');
                 }
             };
             img.onerror = () => {
                 loaded++;
                 setLoadedCount(loaded);
-                console.error(`Failed to load frame ${i}: ${url}`);
                 if (loaded >= total) {
-                    setImages(loadedImages);
                     setImagesLoaded(true);
                 }
             };
-            loadedImages[i] = img;
         }
-    }, [frameCount, getFrameUrl]);
+    }, [frameCount, getFrameUrl, drawFrame]);
 
     // Initial draw and resize logic
     useEffect(() => {
-        if (!imagesLoaded || images.length === 0) return;
-
         const canvas = canvasRef.current;
         if (!canvas) return;
 
@@ -150,7 +154,7 @@ export function ScrollFrameAnimation({
             canvas.height = container.clientHeight;
 
             // Force redraw after resize
-            drawFrame(currentFrameRef.current, images);
+            drawFrame(currentFrameRef.current);
         };
 
         const resizeObserver = new ResizeObserver(() => {
@@ -164,27 +168,17 @@ export function ScrollFrameAnimation({
         updateCanvasSize();
 
         return () => resizeObserver.disconnect();
-    }, [imagesLoaded, images, drawFrame]);
+    }, [drawFrame]);
 
     return (
         <div ref={containerRef} className={`${className} relative`}>
             <canvas
                 ref={canvasRef}
                 className="w-full h-full block"
-                style={{ opacity: imagesLoaded ? 1 : 0, transition: 'opacity 0.5s ease-in' }}
+                style={{ opacity: loadedCount > 0 ? 1 : 0, transition: 'opacity 0.5s ease-in' }}
             />
 
-            {/* Loading overlay */}
-            {!imagesLoaded && (
-                <div className="absolute inset-0 z-20 flex items-center justify-center bg-primary">
-                    <div className="text-white text-center">
-                        <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4" />
-                        <p className="text-sm font-medium">
-                            Loading High-End Experience... {Math.round((loadedCount / frameCount) * 100)}%
-                        </p>
-                    </div>
-                </div>
-            )}
+
         </div>
     );
 }
