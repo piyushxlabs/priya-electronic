@@ -1,0 +1,115 @@
+@theme {
+  /* Design Tokens as CSS Variables */
+  /* These will be overridden by the .dark class */
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  /* Light Mode (Existing) */
+  --primary: #2C3E50;
+  --primary-foreground: #ffffff;
+  --accent: #E67E22;
+  --accent-foreground: #ffffff;
+  --background: #FDFAF6;
+  --background-alt: #F3F4F6;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+
+  /* New Semantic Variables for consistency */
+  --color-background-primary: var(--background);
+  --color-background-secondary: var(--background-alt);
+  --color-background-elevated: #ffffff;
+  --color-border: #E2E8F0;
+  --color-text-primary: var(--text-main);
+  --color-text-secondary: var(--text-muted);
+  --color-text-tertiary: #94A3B8;
+  --color-accent-hover: #D35400;
+  --color-accent-pressed: #A04000;
+  --color-brand-primary: #2980B9;
+  --color-brand-secondary: #3498DB;
+  --color-success: #48BB78;
+  --color-warning: #ECC94B;
+  --color-error: #F56565;
+  --color-info: #4299E1;
+}
+
+.dark {
+  /* PREMIUM DARK MODE COLOR SYSTEM */
+
+  /* Backgrounds */
+  --background: #0F1419;
+  /* Primary Background */
+  --background-alt: #1A1F2E;
+  /* Secondary Background */
+  --color-background-primary: #0F1419;
+  --color-background-secondary: #1A1F2E;
+  --color-background-elevated: #232938;
+  --color-border: #2D3748;
+
+  /* Text */
+  --text-main: #F7FAFC;
+  /* Primary Text */
+  --text-muted: #A0AEC0;
+  /* Secondary Text */
+  --color-text-primary: #F7FAFC;
+  --color-text-secondary: #A0AEC0;
+  --color-text-tertiary: #718096;
+
+  /* Brand/Accent */
+  --accent: #FF8C42;
+  --color-accent: #FF8C42;
+  --color-accent-hover: #FFA661;
+  --color-accent-pressed: #E67A30;
+  --color-brand-primary: #4A90E2;
+  --color-brand-secondary: #5BA3F5;
+
+  /* Semantic */
+  --color-success: #48BB78;
+  --color-warning: #ECC94B;
+  --color-error: #F56565;
+  --color-info: #4299E1;
+
+  /* Primary Override for Dark Mode */
+  --primary: #F7FAFC;
+  --primary-foreground: #0F1419;
+}
