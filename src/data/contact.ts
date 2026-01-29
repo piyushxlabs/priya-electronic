@@ -1,17 +1,17 @@
 export const contactInfo = {
     phone: {
-        display: "+91-9876543210",
-        value: "+919876543210", // for tel: link
+        display: "+91-6395536126",
+        value: "+916395536126", // for tel: link
     },
     whatsapp: {
-        display: "+91-9876543210",
-        value: "919876543210", // for wa.me link
+        display: "+91-6395536126",
+        value: "916395536126", // for wa.me link
     },
-    email: "info@priyaelectronic.com",
+    email: "piyushjaguri13@gmail.com",
     address: {
-        line1: "Shop No. 12, Main Market",
-        line2: "GhāziābĀd, Uttar Pradesh - 201001",
-        mapLink: "https://maps.google.com/?q=Ghaziabad", // Consistent placeholder
+        line1: "Main Market, Raiwala",
+        line2: "Dehradun, Uttarakhand - 249205",
+        mapLink: "https://maps.google.com/?q=Raiwala+Dehradun", // Consistent placeholder
     },
     businessHours: [
         { day: "Monday - Saturday", hours: "10:00 AM - 8:00 PM" },

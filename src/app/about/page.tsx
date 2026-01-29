@@ -6,8 +6,8 @@ import { TeamSection } from "@/components/sections/about/TeamSection";
 import { CTABlock } from "@/components/sections/home/CTABlock";
 
 export const metadata: Metadata = {
-    title: "About Us | Priya Electronic - Home Appliances in GhāziābĀd",
-    description: "Learn about Priya Electronic - your trusted local electronics shop in GhāziābĀd since 2010.",
+    title: "About Us | Priya Electronic - Home Appliances in Raiwala, Dehradun",
+    description: "Learn about Priya Electronic - your trusted local electronics shop in Raiwala since 2010.",
 };
 
 export default function AboutPage() {

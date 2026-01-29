@@ -5,7 +5,7 @@ import { InquiryCTA } from "@/components/sections/products/InquiryCTA";
 import { BrandLogos } from "@/components/sections/products/BrandLogos";
 
 export const metadata: Metadata = {
-    title: "Products | Priya Electronic - Home Appliances in GhāziābĀd",
+    title: "Products | Priya Electronic - Home Appliances in Raiwala, Dehradun",
     description: "Browse our range of refrigerators, air conditioners, televisions, and washing machines from top brands.",
 };
 

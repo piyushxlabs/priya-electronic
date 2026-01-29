@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Priya Electronic | Home Appliances in GhāziābĀd",
-  description: "Your trusted local electronics shop in GhāziābĀd. Quality refrigerators, ACs, TVs, and washing machines with expert service.",
+  title: "Priya Electronic | Home Appliances in Raiwala, Dehradun",
+  description: "Your trusted local electronics shop in Raiwala, Dehradun. Quality refrigerators, ACs, TVs, and washing machines with expert service.",
 };
 
 export default function RootLayout({

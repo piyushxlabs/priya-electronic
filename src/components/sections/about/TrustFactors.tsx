@@ -4,7 +4,7 @@ const trustFactors: { iconName: IconName; title: string; description: string }[]
     {
         iconName: "Award",
         title: "Years of Experience",
-        description: "Over 14 years serving GhāziābĀd families with quality appliances.",
+        description: "Over 14 years serving Raiwala families with quality appliances.",
     },
     {
         iconName: "Shield",

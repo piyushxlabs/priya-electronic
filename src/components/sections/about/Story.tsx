@@ -13,7 +13,7 @@ export function Story() {
                         <div className="space-y-4 text-text-muted leading-relaxed">
                             <p>
                                 Founded in 2010, Priya Electronic started as a small family-run shop with a simple mission:
-                                to help GhāziābĀd families find reliable home appliances without the confusion and pressure
+                                to help Raiwala families find reliable home appliances without the confusion and pressure
                                 of big showrooms.
                             </p>
                             <p>
@@ -22,7 +22,7 @@ export function Story() {
                                 core commitment has never changed: honest advice, fair prices, and service you can count on.
                             </p>
                             <p>
-                                Today, we serve thousands of families across GhāziābĀd and surrounding areas. Many of
+                                Today, we serve thousands of families across Raiwala and surrounding areas. Many of
                                 our customers come back year after year, and refer their friends and family. That trust
                                 is something we work hard to earn every day.
                             </p>

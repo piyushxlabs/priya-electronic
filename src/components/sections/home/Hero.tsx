@@ -49,7 +49,7 @@ export function Hero() {
                         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                             Trusted Home Appliances for
                             <br className="hidden md:block" />
-                            <span className="text-accent"> GhāziābĀd Families</span>
+                            <span className="text-accent"> Raiwala Families</span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 drop-shadow-md">

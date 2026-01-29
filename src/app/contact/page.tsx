@@ -5,7 +5,7 @@ import { MapEmbed } from "@/components/sections/contact/MapEmbed";
 import { InquiryForm } from "@/components/sections/contact/InquiryForm";
 
 export const metadata: Metadata = {
-    title: "Contact | Priya Electronic - Home Appliances in GhāziābĀd",
+    title: "Contact | Priya Electronic - Home Appliances in Raiwala, Dehradun",
     description: "Get in touch with Priya Electronic. Visit our store, call us, or send a message on WhatsApp.",
 };
 

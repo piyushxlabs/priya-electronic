@@ -4,7 +4,7 @@ import { ServiceCards } from "@/components/sections/services/ServiceCards";
 import { CTABlock } from "@/components/sections/home/CTABlock";
 
 export const metadata: Metadata = {
-    title: "Services | Priya Electronic - Home Appliances in GhāziābĀd",
+    title: "Services | Priya Electronic - Home Appliances in Raiwala, Dehradun",
     description: "Explore our services including installation, guidance, and after-sales support for home appliances.",
 };
 

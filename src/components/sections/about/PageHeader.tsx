@@ -6,7 +6,7 @@ export function PageHeader() {
                     About Priya Electronic
                 </h1>
                 <p className="text-lg text-gray-200 max-w-xl mx-auto">
-                    Your trusted local electronics partner in GhāziābĀd
+                    Your trusted local electronics partner in Raiwala
                 </p>
             </div>
         </section>

@@ -22,7 +22,7 @@ export function MapEmbed() {
                 {/* Map Placeholder - Replace with actual Google Maps embed */}
                 <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden bg-gray-200">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111995.24376198982!2d77.35498245!3d28.6691565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1c04cf1c1c5%3A0xf8d34c0f7c0f7c0f!2sGhaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.6!2d78.2!3d30.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091!2sRaiwala%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1234567890"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
