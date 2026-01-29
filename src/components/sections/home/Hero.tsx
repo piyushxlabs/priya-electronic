@@ -41,18 +41,18 @@ export function Hero() {
                 </div>
 
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 z-[5] bg-black/50 dark:bg-black/60" />
+                <div className="absolute inset-0 z-[5] bg-black/50" />
 
                 {/* Hero content */}
                 <div className="relative z-10 h-full flex items-center justify-center">
                     <div className="container mx-auto px-4 md:px-6 text-center">
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white dark:text-dark-text-primary mb-6 leading-tight drop-shadow-lg">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                             Trusted Home Appliances for
                             <br className="hidden md:block" />
-                            <span className="text-accent dark:text-dark-accent"> GhāziābĀd Families</span>
+                            <span className="text-accent"> GhāziābĀd Families</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-gray-200 dark:text-dark-text-secondary max-w-2xl mx-auto mb-8 drop-shadow-md">
+                        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 drop-shadow-md">
                             Refrigerators, ACs, TVs, Washing Machines — Quality Products, Local Service
                         </p>
 

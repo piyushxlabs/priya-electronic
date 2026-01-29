@@ -30,13 +30,13 @@ const trustFactors: { iconName: IconName; title: string; description: string }[]
 
 export function TrustFactors() {
     return (
-        <section className="py-16 md:py-24 bg-background-alt dark:bg-dark-bg-secondary transition-colors duration-200">
+        <section className="py-16 md:py-24 bg-background-alt transition-colors duration-200">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
-                    <h2 className="text-2xl md:text-3xl font-bold text-primary dark:text-dark-text-primary mb-4">
+                    <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                         Why Customers Trust Us
                     </h2>
-                    <p className="text-text-muted dark:text-dark-text-secondary max-w-xl mx-auto">
+                    <p className="text-text-muted max-w-xl mx-auto">
                         What makes Priya Electronic different from the rest
                     </p>
                 </div>
@@ -45,16 +45,16 @@ export function TrustFactors() {
                     {trustFactors.map((item, index) => (
                         <div
                             key={index}
-                            className="p-6 rounded-xl bg-white dark:bg-dark-bg-elevated border border-gray-200 dark:border-dark-border flex items-start gap-4 transition-colors"
+                            className="p-6 rounded-xl bg-white border border-gray-200 flex items-start gap-4 transition-colors"
                         >
-                            <div className="w-12 h-12 shrink-0 rounded-lg bg-accent/10 dark:bg-dark-bg-secondary flex items-center justify-center">
-                                <Icon name={item.iconName} className="h-6 w-6 text-accent dark:text-dark-accent" />
+                            <div className="w-12 h-12 shrink-0 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <Icon name={item.iconName} className="h-6 w-6 text-accent" />
                             </div>
                             <div>
-                                <h3 className="font-semibold text-primary dark:text-dark-text-primary mb-1">
+                                <h3 className="font-semibold text-primary mb-1">
                                     {item.title}
                                 </h3>
-                                <p className="text-sm text-text-muted dark:text-dark-text-secondary">
+                                <p className="text-sm text-text-muted">
                                     {item.description}
                                 </p>
                             </div>

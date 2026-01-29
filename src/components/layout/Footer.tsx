@@ -14,13 +14,13 @@ const footerLinks = {
 
 export function Footer() {
     return (
-        <footer className="bg-primary dark:bg-dark-bg-elevated text-primary-foreground dark:text-dark-text-secondary transition-colors duration-200 border-t border-transparent dark:border-dark-border">
+        <footer className="bg-primary text-primary-foreground transition-colors duration-200 border-t border-transparent">
             <div className="container mx-auto px-4 md:px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* About Column */}
                     <div className="space-y-4">
-                        <h3 className="text-lg font-bold text-white dark:text-dark-text-primary">Priya Electronic</h3>
-                        <p className="text-sm text-gray-300 dark:text-dark-text-secondary">
+                        <h3 className="text-lg font-bold text-white">Priya Electronic</h3>
+                        <p className="text-sm text-gray-300">
                             Your trusted local electronics shop in GhāziābĀd. Quality home appliances with expert service.
                         </p>
                     </div>
@@ -33,7 +33,7 @@ export function Footer() {
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm text-gray-300 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-accent transition-colors"
+                                        className="text-sm text-gray-300 hover:text-white transition-colors"
                                     >
                                         {link.label}
                                     </Link>
@@ -56,7 +56,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Icon name="MapPin" className="h-5 w-5 text-accent mt-0.5" />
-                                <span className="text-sm text-gray-300 dark:text-dark-text-secondary">
+                                <span className="text-sm text-gray-300">
                                     {contactInfo.address.line1}<br />{contactInfo.address.line2}
                                 </span>
                             </li>
@@ -80,8 +80,8 @@ export function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-12 pt-8 border-t border-gray-700 dark:border-dark-border text-center">
-                    <p className="text-sm text-gray-400 dark:text-dark-text-tertiary">
+                <div className="mt-12 pt-8 border-t border-gray-700 text-center">
+                    <p className="text-sm text-gray-400">
                         © {new Date().getFullYear()} Priya Electronic. All rights reserved.
                     </p>
                 </div>

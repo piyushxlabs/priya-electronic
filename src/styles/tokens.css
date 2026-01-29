@@ -45,7 +45,7 @@
 }
 
 :root {
-  /* Light Mode (Existing) */
+  /* Original Light Mode Palette */
   --primary: #2C3E50;
   --primary-foreground: #ffffff;
   --accent: #E67E22;
@@ -55,7 +55,7 @@
   --text-main: #1F2937;
   --text-muted: #6B7280;
 
-  /* New Semantic Variables for consistency */
+  /* Semantic Variables */
   --color-background-primary: var(--background);
   --color-background-secondary: var(--background-alt);
   --color-background-elevated: #ffffff;
@@ -71,45 +71,4 @@
   --color-warning: #ECC94B;
   --color-error: #F56565;
   --color-info: #4299E1;
-}
-
-.dark {
-  /* PREMIUM DARK MODE COLOR SYSTEM */
-
-  /* Backgrounds */
-  --background: #0F1419;
-  /* Primary Background */
-  --background-alt: #1A1F2E;
-  /* Secondary Background */
-  --color-background-primary: #0F1419;
-  --color-background-secondary: #1A1F2E;
-  --color-background-elevated: #232938;
-  --color-border: #2D3748;
-
-  /* Text */
-  --text-main: #F7FAFC;
-  /* Primary Text */
-  --text-muted: #A0AEC0;
-  /* Secondary Text */
-  --color-text-primary: #F7FAFC;
-  --color-text-secondary: #A0AEC0;
-  --color-text-tertiary: #718096;
-
-  /* Brand/Accent */
-  --accent: #FF8C42;
-  --color-accent: #FF8C42;
-  --color-accent-hover: #FFA661;
-  --color-accent-pressed: #E67A30;
-  --color-brand-primary: #4A90E2;
-  --color-brand-secondary: #5BA3F5;
-
-  /* Semantic */
-  --color-success: #48BB78;
-  --color-warning: #ECC94B;
-  --color-error: #F56565;
-  --color-info: #4299E1;
-
-  /* Primary Override for Dark Mode */
-  --primary: #F7FAFC;
-  --primary-foreground: #0F1419;
 }

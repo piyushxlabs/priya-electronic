@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@/components/ui/Icon";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { contactInfo } from "@/data/contact";
 
 interface MobileMenuProps {
@@ -27,13 +26,12 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-50 bg-gradient-to-br from-black/98 via-black/95 to-primary/20 dark:from-dark-bg-primary dark:via-dark-bg-secondary dark:to-dark-bg-primary/50 backdrop-blur-2xl"
+                    className="fixed inset-0 z-50 bg-gradient-to-br from-black/98 via-black/95 to-primary/20 backdrop-blur-2xl"
                 >
                     {/* Top Bar */}
-                    <div className="absolute top-0 left-0 right-0 h-16 bg-white/5 backdrop-blur-md border-b border-white/10 dark:border-dark-border flex items-center justify-between px-6">
-                        <span className="text-white dark:text-dark-text-primary font-semibold text-sm tracking-wide">MENU</span>
+                    <div className="absolute top-0 left-0 right-0 h-16 bg-white/5 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-6">
+                        <span className="text-white font-semibold text-sm tracking-wide">MENU</span>
                         <div className="flex items-center gap-4">
-                            <ThemeToggle className="bg-white/10 border-white/20 hover:bg-white/20" />
                             <button
                                 onClick={onClose}
                                 className="rounded-full p-2 text-white/70 hover:text-white hover:bg-white/10 transition-all"
@@ -57,10 +55,10 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
                                     onClick={onClose}
                                     className="group flex items-center justify-between py-5 border-b border-white/5 hover:border-accent/30 transition-all"
                                 >
-                                    <span className="text-2xl font-light text-white/60 dark:text-dark-text-secondary group-hover:text-white dark:group-hover:text-dark-text-primary group-hover:translate-x-2 transition-all">
+                                    <span className="text-2xl font-light text-white/60 group-hover:text-white group-hover:translate-x-2 transition-all">
                                         {link.label}
                                     </span>
-                                    <Icon name="ChevronRight" className="h-5 w-5 text-white/20 dark:text-dark-text-tertiary group-hover:text-accent dark:group-hover:text-dark-accent group-hover:translate-x-1 transition-all" />
+                                    <Icon name="ChevronRight" className="h-5 w-5 text-white/20 group-hover:text-accent group-hover:translate-x-1 transition-all" />
                                 </Link>
                             </motion.div>
                         ))}

@@ -31,21 +31,21 @@ export function InquiryForm() {
     };
 
     return (
-        <section className="py-16 md:py-24 bg-background dark:bg-dark-bg-primary transition-colors duration-200">
+        <section className="py-16 md:py-24 bg-background transition-colors duration-200">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-lg mx-auto">
                     <div className="text-center mb-8">
-                        <h2 className="text-2xl font-bold text-primary dark:text-dark-text-primary mb-4">
+                        <h2 className="text-2xl font-bold text-primary mb-4">
                             Send Us a Message
                         </h2>
-                        <p className="text-text-muted dark:text-dark-text-secondary">
+                        <p className="text-text-muted">
                             Fill out the form below and we'll get back to you within 24 hours
                         </p>
                     </div>
 
                     {submitStatus === "success" ? (
-                        <div className="p-6 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-center">
-                            <p className="text-green-700 dark:text-green-400 font-medium">
+                        <div className="p-6 rounded-xl bg-green-50 border border-green-200 text-center">
+                            <p className="text-green-700 font-medium">
                                 Thank you! We've received your message and will get back to you soon.
                             </p>
                         </div>
@@ -70,11 +70,11 @@ export function InquiryForm() {
                             />
 
                             <div className="w-full">
-                                <label className="block text-sm font-medium text-text-main dark:text-dark-text-primary mb-1.5">
+                                <label className="block text-sm font-medium text-text-main mb-1.5">
                                     Product Interest
                                 </label>
                                 <select
-                                    className="flex h-10 w-full rounded-md border border-gray-300 dark:border-dark-border bg-background dark:bg-dark-bg-secondary px-3 py-2 text-sm dark:text-dark-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-dark-accent focus-visible:ring-offset-2 transition-all duration-200"
+                                    className="flex h-10 w-full rounded-md border border-gray-300 bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all duration-200"
                                     value={formData.productInterest}
                                     onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
                                 >
@@ -88,11 +88,11 @@ export function InquiryForm() {
                             </div>
 
                             <div className="w-full">
-                                <label className="block text-sm font-medium text-text-main dark:text-dark-text-primary mb-1.5">
+                                <label className="block text-sm font-medium text-text-main mb-1.5">
                                     Message *
                                 </label>
                                 <textarea
-                                    className="flex min-h-[120px] w-full rounded-md border border-gray-300 dark:border-dark-border bg-background dark:bg-dark-bg-secondary px-3 py-2 text-sm ring-offset-background placeholder:text-text-muted dark:placeholder:text-dark-text-tertiary dark:text-dark-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent dark:focus-visible:ring-dark-accent focus-visible:ring-offset-2 transition-all duration-200"
+                                    className="flex min-h-[120px] w-full rounded-md border border-gray-300 bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all duration-200"
                                     placeholder="How can we help you?"
                                     required
                                     value={formData.message}

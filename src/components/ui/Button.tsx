@@ -15,11 +15,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
         // Variant styles
         const variants = {
-            primary: "bg-accent dark:bg-dark-accent text-accent-foreground hover:brightness-110 shadow-sm transition-all",
-            secondary: "bg-primary text-primary-foreground dark:bg-dark-bg-elevated dark:border-dark-border dark:text-dark-text-primary hover:bg-primary/90 dark:hover:bg-dark-bg-elevated/80 border border-transparent shadow-md",
-            outline: "border border-gray-200 dark:border-dark-border bg-background dark:bg-dark-bg-secondary hover:bg-accent hover:text-accent-foreground dark:hover:bg-dark-accent dark:hover:text-white dark:text-dark-text-primary",
-            ghost: "hover:bg-accent/10 dark:hover:bg-dark-bg-elevated dark:text-dark-text-secondary dark:hover:text-dark-text-primary",
-            link: "text-primary dark:text-dark-brand-primary underline-offset-4 hover:underline",
+            primary: "bg-accent text-accent-foreground hover:brightness-110 shadow-sm transition-all",
+            secondary: "bg-primary text-primary-foreground hover:bg-primary/90 border border-transparent shadow-md",
+            outline: "border border-gray-200 bg-background hover:bg-accent hover:text-accent-foreground",
+            ghost: "hover:bg-accent/10",
+            link: "text-primary underline-offset-4 hover:underline",
         };
 
         // Size styles

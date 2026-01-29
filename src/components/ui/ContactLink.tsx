@@ -41,8 +41,8 @@ export function ContactLink({ type, value, label, className, iconOnly = false }:
             className={cn(
                 "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-all duration-200",
                 type === "whatsapp" && "bg-green-500 text-white hover:bg-green-600 shadow-sm",
-                type === "phone" && "bg-accent text-accent-foreground hover:bg-accent/90 dark:bg-dark-brand-primary dark:hover:bg-dark-brand-secondary shadow-sm",
-                type === "email" && "bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-dark-bg-elevated dark:border-dark-border dark:text-dark-text-primary shadow-sm",
+                type === "phone" && "bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm",
+                type === "email" && "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
                 iconOnly && "p-2.5",
                 className
             )}

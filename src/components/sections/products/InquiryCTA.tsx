@@ -3,12 +3,12 @@ import { contactInfo } from "@/data/contact";
 
 export function InquiryCTA() {
     return (
-        <section className="py-12 md:py-16 bg-background-alt dark:bg-dark-bg-secondary transition-colors duration-200">
+        <section className="py-12 md:py-16 bg-background-alt transition-colors duration-200">
             <div className="container mx-auto px-4 md:px-6 text-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-primary dark:text-dark-text-primary mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                     Interested in Any Product?
                 </h2>
-                <p className="text-text-muted dark:text-dark-text-secondary max-w-xl mx-auto mb-8">
+                <p className="text-text-muted max-w-xl mx-auto mb-8">
                     Our team will help you choose the right appliance for your needs
                 </p>
 
